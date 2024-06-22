@@ -1,9 +1,9 @@
 const {Sequelize} = require('sequelize');
 
 module.exports = new Sequelize(
-    'tel_bot',
-    'root',
-    'root',
+    'postgres',
+    'postgres',
+    '',
     {
         host: '138.180.154.107',
         port: '5432',
