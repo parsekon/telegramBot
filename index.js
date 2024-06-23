@@ -50,7 +50,7 @@ const start = async () => {
       }
 
       if (text === "/info") {
-        const user = UserModel.fingOne({chatId});
+        const user = UserModel.findOne({chatId});
         return bot.sendMessage(
           chatId,
           `Your name ${msg.from.first_name} ${msg.from.last_name}. У тебя ${user.right} правильных и ${user.wrong} неправильных ответов.`
