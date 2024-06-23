@@ -38,7 +38,7 @@ const start = async () => {
 
     try {
       if (text === "/start") {
-        await UserModel.create({chatId})
+        // await UserModel.create({chatId})
         await bot.sendSticker(
           chatId,
           "https://telegram-apps.github.io/wp-content/uploads/2020/10/164.png"
@@ -50,10 +50,10 @@ const start = async () => {
       }
 
       if (text === "/info") {
-        const user = UserModel.findOne({chatId});
+        // const user = UserModel.findOne({chatId});
         return bot.sendMessage(
           chatId,
-          `Your name ${msg.from.first_name} ${msg.from.last_name}. У тебя ${user.right} правильных и ${user.wrong} неправильных ответов.`
+          `Your name ${msg.from.first_name} ${msg.from.last_name}. У тебя  правильных  и  неправильных ответов.`
         );
       }
 
@@ -78,17 +78,17 @@ const start = async () => {
       return startGame(chatId);
     }
 
-    const user = UserModel.findOne({chatId});
+    // const user = UserModel.findOne({chatId});
 
     if (+data === chats[chatId]) {
-      user.right += 1;
+      // user.right += 1;
       await bot.sendMessage(
         chatId,
         `Congratulation! You choose right the digit ${chats[chatId]}`,
         againOptions
       );
     } else {
-      user.wrong += 1;
+      // user.wrong += 1;
       await bot.sendMessage(
         chatId,
         ` Data - ${msg.data} ${typeof data} ${typeof chats[
